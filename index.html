@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arun Kumar B – Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7ff;--side:#fff;--surface:#fff;--ink:#0f2742;--muted:#4b5f7a;--line:#dbe3f0;--accent:#1d6fe0;--accent-soft:#e4f0ff;--on:#fff;--warm:#b45309;color-scheme:light;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1322;--side:#111c33;--surface:#14213b;--ink:#e8eef8;--muted:#a3b2c9;--line:#26365a;--accent:#6aa8ff;--accent-soft:#1a2c52;--on:#06142e;--warm:#f6ad55;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1322;--side:#111c33;--surface:#14213b;--ink:#e8eef8;--muted:#a3b2c9;--line:#26365a;--accent:#6aa8ff;--accent-soft:#1a2c52;--on:#06142e;--warm:#f6ad55;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+svg.i{width:1.2rem;height:1.2rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.side{position:fixed;inset:0 auto 0 0;width:16rem;background:var(--side);border-right:1px solid var(--line);padding:calc(1.25rem + env(safe-area-inset-top,0px)) 1rem calc(1rem + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;z-index:20;transition:transform .25s}
+.who{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;padding:0 .5rem}
+.av{width:2.7rem;height:2.7rem;border-radius:50%;background:var(--accent);color:var(--on);display:grid;place-items:center;font:800 1.05rem "Bricolage Grotesque",sans-serif}
+.who b{display:block;line-height:1.2}.who span{font-size:.85rem;color:var(--muted)}
+nav a{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:.6rem;color:var(--ink);text-decoration:none;margin-bottom:.2rem}
+nav a:hover{background:var(--accent-soft)}
+nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.side .foot{margin-top:auto;display:grid;gap:.6rem}
+.tbtn{display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem .9rem;border:1px solid var(--line);border-radius:.6rem;background:transparent;color:var(--ink);font:inherit;cursor:pointer}
+.top{display:none}
+main{margin-left:16rem;padding:0 clamp(1.25rem,5vw,4rem) 3rem}
+section{padding:4.5rem 0 1rem}
+h2{font-size:clamp(1.9rem,4vw,2.5rem);font-weight:800;margin-bottom:1.5rem;letter-spacing:-.02em}
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center}
+.badge{display:inline-flex;align-items:center;gap:.5rem;align-self:flex-start;background:var(--accent-soft);color:var(--accent);padding:.35rem .8rem;border-radius:2rem;font-weight:600;font-size:.9rem}
+.badge::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:#16a34a}
+h1{font-size:clamp(2.8rem,8vw,5.5rem);font-weight:800;letter-spacing:-.035em;margin:1.2rem 0 .4rem}
+.name{font:600 1.35rem "Bricolage Grotesque",sans-serif;color:var(--accent)}
+.lead{max-width:40rem;color:var(--muted);font-size:1.12rem;margin:1rem 0 0}
+.row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;border-radius:.6rem;border:1.5px solid var(--accent);text-decoration:none;font-weight:600;background:transparent;color:var(--accent);font-family:inherit;font-size:1rem;cursor:pointer}
+.btn.fill{background:var(--accent);color:var(--on)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1.25rem}
+.stack{margin-top:2.5rem;max-width:34rem}
+.seg{display:inline-flex;border:1.5px solid var(--accent);border-radius:.6rem;overflow:hidden;margin:.5rem 0 1rem}
+.seg button{font:600 .95rem "IBM Plex Sans",sans-serif;padding:.45rem 1.1rem;border:0;background:transparent;color:var(--accent);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on)}
+.layers{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.layers li{display:grid;grid-template-columns:6.5rem 1fr;gap:.75rem;padding:.6rem .8rem;border-left:4px solid var(--accent);background:var(--bg);border-radius:.3rem}
+.layers li:nth-child(2){border-left-color:var(--warm)}.layers span{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem;margin-top:1.75rem}
+.stats b{display:block;font:800 2.2rem "Bricolage Grotesque",sans-serif;color:var(--accent);line-height:1}
+.stats span{color:var(--muted);font-size:.92rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.tabs button{padding:.45rem 1rem;border-radius:2rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{padding:.5rem .9rem;border-radius:.5rem;background:var(--surface);border:1px solid var(--line);font-weight:500}
+.chip[hidden]{display:none}
+.tl{border-left:2px solid var(--line);padding-left:1.5rem;margin-left:.4rem;position:relative}
+.tl::before{content:"";position:absolute;left:-.55rem;top:.35rem;width:1rem;height:1rem;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl p{margin:.25rem 0}.when{color:var(--muted)}
+ul.plain{padding-left:1.2rem;margin:.6rem 0}ul.plain li{margin:.35rem 0}
+.projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.25rem}
+.projs h3{font-size:1.3rem;margin-bottom:.5rem}
+.tech{display:flex;flex-wrap:wrap;gap:.4rem;margin:.8rem 0 1rem}
+.tech span{font-size:.82rem;padding:.2rem .6rem;border-radius:2rem;background:var(--accent-soft);color:var(--accent);font-weight:600}
+dialog{width:min(40rem,92vw);border:1px solid var(--line);border-radius:1rem;background:var(--surface);color:var(--ink);padding:1.5rem}
+dialog::backdrop{background:rgba(5,12,28,.6)}
+.flow{display:grid;gap:.6rem;list-style:none;padding:0;margin:1rem 0}
+.flow li{padding:.7rem 1rem;border-radius:.6rem;background:var(--bg);border:1px solid var(--line)}
+.flow b{display:block;color:var(--accent)}
+.mods{display:grid;gap:.6rem;margin-top:1rem}.mods div{padding:.6rem .9rem;border-radius:.6rem;background:var(--bg);border:1px solid var(--line)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:34rem}
+th,td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid var(--line)}
+form{display:grid;gap:.9rem;max-width:34rem}
+label{display:grid;gap:.3rem;font-weight:600}
+input,textarea{font:inherit;padding:.65rem .8rem;border-radius:.5rem;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+@media (max-width:56rem){
+ .top{display:flex;position:fixed;inset:0 0 auto 0;z-index:15;align-items:center;gap:.8rem;padding:calc(.6rem + env(safe-area-inset-top,0px)) 1rem .6rem;background:var(--side);border-bottom:1px solid var(--line)}
+ .top button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:.5rem;padding:.4rem;display:grid;cursor:pointer}
+ .side{transform:translateX(-101%)}.side.open{transform:none;box-shadow:0 0 40px rgba(0,0,0,.35)}
+ main{margin-left:0;padding-top:calc(3.6rem + env(safe-area-inset-top,0px))}
+ .hero{min-height:auto;padding-top:2.5rem}
+ .layers li{grid-template-columns:1fr;gap:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+<symbol id="layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></symbol>
+<symbol id="case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+</defs></svg>
+
+<div class="top"><button id="mb" aria-label="Open menu" aria-expanded="false"><svg class="i"><use href="#menu"/></svg></button><b>Arun Kumar B</b></div>
+
+<aside class="side" id="sb" aria-label="Site navigation">
+  <div class="who"><div class="av">AK</div><div><b>Arun Kumar B</b><span>Full stack developer</span></div></div>
+  <nav>
+    <a href="#home" class="on"><svg class="i"><use href="#home"/></svg>Home</a>
+    <a href="#about"><svg class="i"><use href="#user"/></svg>About</a>
+    <a href="#skills"><svg class="i"><use href="#layers"/></svg>Skills</a>
+    <a href="#experience"><svg class="i"><use href="#case"/></svg>Experience</a>
+    <a href="#projects"><svg class="i"><use href="#code"/></svg>Projects</a>
+    <a href="#contact"><svg class="i"><use href="#mail"/></svg>Contact</a>
+  </nav>
+  <div class="foot">
+    <button class="tbtn" id="theme" type="button"><svg class="i"><use href="#moon"/></svg>Switch theme</button>
+  </div>
+</aside>
+
+<main>
+<section id="home" class="hero">
+  <span class="badge">Open to work in Chennai</span>
+  <h1>Full-Stack Developer</h1>
+  <div class="name">Arun Kumar B, Java and .NET</div>
+  <p class="lead">I build and support enterprise web applications with Java (Spring Boot), .NET (C#) and React, backed by SQL Server and MySQL. I like fixing hard production problems and keeping applications stable for the people who use them.</p>
+  <div class="row"><a class="btn fill" href="#projects">See my projects</a><a class="btn" href="#contact">Contact me</a></div>
+  <div class="card stack">
+    <b>Pick a back end to see how I build a feature end to end</b>
+    <div><div class="seg" role="group" aria-label="Back end"><button type="button" data-s="java" aria-pressed="true">Java</button><button type="button" data-s="net" aria-pressed="false">.NET</button></div></div>
+    <ul class="layers" aria-live="polite">
+      <li><span>Front end</span><b>React, JavaScript, HTML, CSS</b></li>
+      <li><span>Back end</span><b id="be">Spring Boot, JPA/Hibernate, REST APIs</b></li>
+      <li><span>Database</span><b id="db">MySQL, SQL Server, stored procedures</b></li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+  <p class="lead" style="margin-top:0">I have 2 years of experience developing, maintaining and supporting web applications. I work across the full stack, from React screens to SQL queries, and I’m comfortable debugging under pressure and supporting testing and releases. I’m based in Madurai.</p>
+  <div class="stats">
+    <div class="card"><b>2</b><span>years of experience</span></div>
+    <div class="card"><b>2</b><span>enterprise projects</span></div>
+    <div class="card"><b>12</b><span>VPS modules worked on</span></div>
+    <div class="card"><b>3</b><span>Qspiders certifications</span></div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="tabs" role="group" aria-label="Skill category">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="java" aria-pressed="false">Java</button>
+    <button type="button" data-f="net" aria-pressed="false">.NET</button>
+    <button type="button" data-f="front" aria-pressed="false">Front end</button>
+    <button type="button" data-f="data" aria-pressed="false">Databases</button>
+    <button type="button" data-f="tools" aria-pressed="false">Tools</button>
+  </div>
+  <div class="chips" id="chips">
+    <span class="chip" data-c="java">Java</span><span class="chip" data-c="java">J2EE</span><span class="chip" data-c="java">Spring Boot</span><span class="chip" data-c="java">JPA/Hibernate</span>
+    <span class="chip" data-c="net">C#</span><span class="chip" data-c="net">.NET</span>
+    <span class="chip" data-c="front">React</span><span class="chip" data-c="front">JavaScript</span><span class="chip" data-c="front">HTML</span><span class="chip" data-c="front">CSS</span>
+    <span class="chip" data-c="data">SQL Server (SSMS)</span><span class="chip" data-c="data">MySQL</span><span class="chip" data-c="data">Oracle SQL</span><span class="chip" data-c="data">Stored procedures</span>
+    <span class="chip" data-c="tools">REST APIs</span><span class="chip" data-c="tools">JSON</span><span class="chip" data-c="tools">Postman</span><span class="chip" data-c="tools">Git</span><span class="chip" data-c="tools">GitHub</span><span class="chip" data-c="tools">Visual Studio</span><span class="chip" data-c="tools">IntelliJ IDEA / Eclipse</span><span class="chip" data-c="tools">VS Code</span>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="tl">
+    <h3>Junior Associate Software Engineer</h3>
+    <p><b>Betamonks Technology Pvt Ltd</b>, Chennai</p>
+    <p class="when">December 2024 to present</p>
+    <ul class="plain">
+      <li>Developed and maintained full stack modules using Java, Spring Boot, .NET (C#), React and JavaScript.</li>
+      <li>Wrote and optimised SQL queries and managed data in SQL Server (SSMS).</li>
+      <li>Resolved production issues quickly under pressure, keeping the application stable for users.</li>
+      <li>Debugged issues, fixed defects and supported testing and releases across modules.</li>
+    </ul>
+  </div>
+  <h2 style="margin-top:3rem">Education</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Qualification</th><th>Institution</th><th>Years</th><th>Score</th></tr></thead>
+    <tbody>
+      <tr><td>BSc, Computer Science</td><td>Government Arts College, Coimbatore</td><td>2020 to 2023</td><td>72%</td></tr>
+      <tr><td>HSC</td><td>Lord Venkateshwara Matric Higher Secondary School, Madurai</td><td>2019 to 2020</td><td>78%</td></tr>
+      <tr><td>SSLC</td><td>Lord Venkateshwara Matric Higher Secondary School, Madurai</td><td>2017 to 2018</td><td>84%</td></tr>
+    </tbody></table></div>
+  <ul class="plain"><li>Qspiders certifications: Java and J2EE, Oracle SQL, Web Development</li><li>NCC “C” Certificate holder</li><li>Languages: Tamil, English</li></ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projs">
+    <article class="card">
+      <h3>VPS</h3>
+      <p>A multi-module enterprise web application with three product areas, built and supported by me day to day.</p>
+      <div class="tech"><span>Java</span><span>Spring Boot</span><span>.NET (C#)</span><span>React</span><span>SQL Server</span></div>
+      <button class="btn" type="button" data-d="d1">View details</button>
+    </article>
+    <article class="card">
+      <h3>Learning Outcomes</h3>
+      <p>An online assessment and mark sheet system with Admin, Staff and Student roles for institutes.</p>
+      <div class="tech"><span>React</span><span>Spring Boot</span><span>MySQL</span></div>
+      <button class="btn" type="button" data-d="d2">View details</button>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="lead" style="margin-top:0">I’m looking for a full stack developer role with Java, .NET and React. Write a message and send it with Gmail, or open it in your email app.</p>
+  <form id="cf">
+    <label>Your name<input id="n" required autocomplete="name"></label>
+    <label>Message<textarea id="m" rows="4" required></textarea></label>
+    <div class="row" style="margin-top:0"><button class="btn fill" type="submit">Send with Gmail</button><button class="btn" type="button" id="oe">Open in email app</button><button class="btn" type="button" id="cp">Copy my email</button></div><p id="st" role="status" style="margin:0;color:var(--muted)"></p>
+  </form>
+  <p style="margin-top:1.5rem"><a href="mailto:arun348karan@gmail.com">arun348karan@gmail.com</a>, <a href="tel:+916380046958">+91 6380046958</a>, <a href="https://www.linkedin.com/in/arunkumarb" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
+
+<dialog id="d1" aria-label="VPS details">
+  <h3>VPS</h3>
+  <ul class="plain"><li>Developed and maintained full stack modules across the application.</li><li>Optimised SQL queries and managed data in SQL Server (SSMS).</li><li>Resolved production issues and supported testing and releases.</li></ul>
+  <div class="mods">
+    <div><b>VPS Power:</b> ART, TMS, Enquiry</div>
+    <div><b>VPS Marine:</b> Data Entry, ART, STS Results, STS Enquiry, Lab Approval</div>
+    <div><b>Master:</b> UserAccess, Master, VMS, CE Dashboard</div>
+  </div>
+  <div class="row"><button class="btn fill" type="button" data-x>Close</button></div>
+</dialog>
+<dialog id="d2" aria-label="Learning Outcomes details">
+  <h3>Learning Outcomes</h3>
+  <p>Each institute receives an initial user ID and password, then manages its own people and assessments.</p>
+  <ul class="flow">
+    <li><b>Admin</b>Creates staff, students and courses</li>
+    <li><b>Staff</b>Creates and allots assessments, views marks for one student or a whole class, exports mark sheets to Excel</li>
+    <li><b>Student</b>Logs in, sees allotted assessments, then starts and submits one</li>
+  </ul>
+  <p>I built the REST APIs in Spring Boot with MySQL, and the React front end.</p>
+  <div class="row"><button class="btn fill" type="button" data-x>Close</button></div>
+</dialog>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var sb=$("#sb"),mb=$("#mb");
+  function menu(o){sb.classList.toggle("open",o);mb.setAttribute("aria-expanded",o)}
+  mb.onclick=function(){menu(!sb.classList.contains("open"))};
+  $$("nav a").forEach(function(a){a.onclick=function(){menu(false)}});
+  var links=$$("nav a"),secs=$$("main section");
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"});
+  secs.forEach(function(s){io.observe(s)});
+  $("#theme").onclick=function(){var r=document.documentElement,d=r.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");r.setAttribute("data-theme",d==="dark"?"light":"dark")};
+  var D={java:["Spring Boot, JPA/Hibernate, REST APIs","MySQL, SQL Server, stored procedures"],net:["C#, .NET, REST APIs","SQL Server (SSMS), stored procedures"]};
+  var sg=$$(".seg button");
+  sg.forEach(function(b){b.onclick=function(){sg.forEach(function(x){x.setAttribute("aria-pressed",x===b)});$("#be").textContent=D[b.dataset.s][0];$("#db").textContent=D[b.dataset.s][1]}});
+  var tb=$$(".tabs button");
+  tb.forEach(function(b){b.onclick=function(){tb.forEach(function(x){x.setAttribute("aria-pressed",x===b)});$$(".chip").forEach(function(c){c.hidden=b.dataset.f!=="all"&&c.dataset.c!==b.dataset.f})}});
+  $$("[data-d]").forEach(function(b){b.onclick=function(){var d=document.getElementById(b.dataset.d);d.showModal?d.showModal():d.setAttribute("open","")}});
+  $$("[data-x]").forEach(function(b){b.onclick=function(){var d=b.closest("dialog");d.close?d.close():d.removeAttribute("open")}});
+  $$("dialog").forEach(function(d){d.addEventListener("click",function(e){if(e.target===d&&d.close)d.close()})});
+  var E="arun348karan@gmail.com";function enc(){return [encodeURIComponent("Portfolio message from "+$("#n").value),encodeURIComponent($("#m").value)+"%0A%0A"+encodeURIComponent($("#n").value)]}
+  $("#cf").onsubmit=function(e){e.preventDefault();var p=enc(),w=window.open("https://mail.google.com/mail/?view=cm&fs=1&to="+E+"&su="+p[0]+"&body="+p[1],"_blank","noopener");if(!w)location.href="mailto:"+E+"?subject="+p[0]+"&body="+p[1]};
+  $("#oe").onclick=function(){var p=enc();location.href="mailto:"+E+"?subject="+p[0]+"&body="+p[1]};
+  $("#cp").onclick=function(){var t=$("#st");try{navigator.clipboard.writeText(E).then(function(){t.textContent="Copied "+E},function(){t.textContent="Email: "+E})}catch(x){t.textContent="Email: "+E}};
+})();
+</script>
+</body>
+</html>
